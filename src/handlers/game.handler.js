@@ -17,7 +17,7 @@ export const gameStart = (uuid, payload) => {
 export const gameEnd = (uuid, payload) => { //여기서 최종 점수 계산.
     const {timestamp:gameEndTime, score} = payload; //여기서 최종 스코어 얻어서 비교해서 밑에서 b뭐시기 넣어서 보내주면 전체 메세지 뜨겠네 그치?
    
-    //여기서 만약 아이템 처먹고 스테이지가 올랐는데 바로죽으면 스테이지 생성이 안됬을 수도 있으니까~~ 함 확익하고 넣어주고 하는 로직 넣어두면 좋을듯 근데 귀찮으니 패스.
+    //여기서 만약 아이템 먹고 스테이지가 올랐는데 바로죽으면 스테이지 생성이 안됬을 수도 있으니까~~ 함 확익하고 넣어주고 하는 로직 넣어두면 좋을듯 근데 귀찮으니 패스.
 
     const uuidstages = getStage(uuid);
 
@@ -62,5 +62,5 @@ export const gameEnd = (uuid, payload) => { //여기서 최종 점수 계산.
         return { status: 'success',message: "최고 기록 갱신!!", score , broadcast:true };
     }
 
-    return { status: 'success',message: "게임 끝", score}; //와 스코어 넣어놓은것좀 봐.
+    return { status: 'success',message: "게임 끝", score}; //와 스코어 넣어놓은것좀 봐. 어디까지 보신겁니까..
 }//그럼 클라를 고쳐야 한다는거 아님?;;

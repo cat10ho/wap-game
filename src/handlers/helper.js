@@ -1,7 +1,7 @@
 import { CLIENT_VERSION } from '../constants.js';
 import { getGameAssets } from '../init/assets.js';
 import { createStage, getStage, setStage } from '../models/stage.model.js';
-import { getUser, removeUser } from '../models/user.model.js';
+import { getHightScore, getUser, removeUser } from '../models/user.model.js';
 import handlerMappings from './handlerMapping.js';
 
 
@@ -20,6 +20,13 @@ export const handleConnection = (socket, uuid) => {
     console.log('현재 접속중인 유저:', getUser());
 
     createStage(uuid);
+    const hightScore = getHightScore();
+    if( uuid === hightScore.uuid )
+    {
+        const message = '최강자 강림.'
+        socket.emit('connection',{uuid , message}); 
+        return;
+    }
 
     socket.emit('connection',{uuid}); //본인에게 보내는것. 지금 유저 아이디 뭔지 보내는것.
 }

@@ -13,6 +13,11 @@ socket.on('response', (data) => {
 
 socket.on('connection', (data) => {
   console.log('connection: ', data);
+
+  if(data.message){
+    console.log(data.message);
+  }
+  
   userId = data.uuid;
 });
 
