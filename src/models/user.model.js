@@ -8,7 +8,7 @@ export const addUser = (user) => {
 export const removeUser = (socketId) => { //소켓 아이디 아니고 유저 아이디도 ㄱㅊ음.
   const index = users.findIndex((user) => user.socketId === socketId);
   if (index !== -1) {//-1이면 없는거니까 뭐..
-    return users.splice(index, 1)[0];
+   users.splice(index, 1)[0];
   }
 };
 

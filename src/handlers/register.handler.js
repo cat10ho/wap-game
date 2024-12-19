@@ -28,7 +28,7 @@ const registerHandler = (io) => {
           });
 
         socket.on('event', (data) => handlerEvent(io, socket, data));//모든 이벤트는 헨들 이벤트로 처리.
-        socket.on('disconnect', (socket) => handleDisconnect(socket, userUUID)); //이건 유저가 나갈때 지워줌.
+        socket.on('disconnect', () => handleDisconnect(socket, userUUID)); //이건 유저가 나갈때 지워줌.?? 이거 왜 소켓 지워야 하는거지.
     })// socket.on은 하나의 대상만.
 }
 
