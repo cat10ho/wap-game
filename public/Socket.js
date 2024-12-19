@@ -3,6 +3,7 @@ import { CLIENT_VERSION } from './Constants.js';
 const socket = io('http://localhost:3000', {
   query: {
     clientVersion: CLIENT_VERSION,
+    userUUID: localStorage.getItem('userUUID'),
   },
 });
 
@@ -19,6 +20,11 @@ socket.on('connection', (data) => {
   }
   
   userId = data.uuid;
+  const existingUUID = localStorage.getItem('userUUID');
+
+  if (!existingUUID || existingUUID === 'null') {
+    localStorage.setItem('userUUID', userId); 
+  }
 });
 
 const loadAssets = () => {
