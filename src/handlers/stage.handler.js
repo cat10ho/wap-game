@@ -36,5 +36,5 @@ export const moveStageHandler = (userId, payload) => {
     }
 
     setStage(userId, payload.targetStage, serverTime, payload.getItemId); //다음 스테이지는 시간 새로 계산. 욕해서 죄송합니다 센세이..
-    return { status: "success" };
+    return { status: "move stage success" };
 }

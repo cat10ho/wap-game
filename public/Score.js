@@ -6,7 +6,7 @@ class Score {
   hightScore = 0; 
   stageChange = true;
   currentStage= 1000;
-  stages = [{ "id":  1000, "score": 0, "scorePerSecond": 1 }]; //이게 맞나 ㅋㅋㅋ; 존나 임시방편.
+  stages = [{ "id":  1000, "score": 0, "scorePerSecond": 1 }]; //이게 맞나 ㅋㅋㅋ; 임시방편.
   items = [];
   getItemId = [];
 
